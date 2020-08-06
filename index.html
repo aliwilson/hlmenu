@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>HL WON Menu</title>
+    <link rel="stylesheet" href="./won.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <audio id="click" preload="auto">
+      <source src="audio/buttonclickrelease.wav" />
+      Your browser isn't invited for super fun time.
+    </audio>
+    <audio id="menuup" preload="auto">
+      <source src="audio/menuup.wav" />
+      Your browser isn't invited for super fun time.
+    </audio>
+    <audio id="menudown" preload="auto">
+      <source src="audio/menudown.wav" />
+      Your browser isn't invited for super fun time.
+    </audio>
+    <div class="wrapper">
+      <div class="buttons">
+        <div class="minimize"></div>
+        <div class="exit"></div>
+      </div>
+      <div id="marquee" class="marquee-logo">
+        <img
+          src="./half-life-wider.svg"
+          width="650"
+          class="logo solid"
+          alt=""
+        />
+        <img src="./half-life-wider.svg" width="650" class="logo blur" alt="" />
+        <img src="./half-life-wider.svg" width="650" class="logo blur" alt="" />
+      </div>
+      <div id="subheading" class="sub-heading hidden"><span class="innertext"></span><span class="blurtext"></span></div>
+      <nav id="homepagemenu" class="menu-nav main-menu-nav homepage">
+        <ul class="main-menu">
+          <li data-item="new-game" class="menu-item main-menu-item">
+            <span class="underline">N</span>ew game
+          </li>
+          <li data-item="hazard-course" class="menu-item main-menu-item">
+            <span class="underline">H</span>azard course
+          </li>
+          <li data-item="configuration" class="menu-item main-menu-item">
+            <span class="underline">C</span>onfiguration
+          </li>
+          <li data-item="load-game" class="menu-item main-menu-item">
+            <span class="underline">L</span>oad game
+          </li>
+          <li data-item="multiplayer" class="menu-item main-menu-item">
+            <span class="underline">M</span>ultiplayer
+          </li>
+          <li data-item="custom-game" class="menu-item main-menu-item">
+            C<span class="underline">u</span>stom game
+          </li>
+          <li data-item="readme" class="menu-item main-menu-item">
+            <span class="underline">V</span>iew readme
+          </li>
+          <li data-item="previews" class="menu-item main-menu-item">
+            <span class="underline">P</span>reviews
+          </li>
+          <li data-item="quit" class="menu-item main-menu-item">
+            <span class="underline">Q</span>uit
+          </li>
+        </ul>
+        <ul class="description-menu">
+          <li>Start a new game.</li>
+          <li>Learn how to play Half-Life.</li>
+          <li>Change game settings, configure controls.</li>
+          <li>Load a previously saved game.</li>
+          <li>
+            Search for Half-Life servers, chat with other players, configure
+            character.
+          </li>
+          <li>Select a custom game, search the Internet for custom games</li>
+          <li>View the Readme.txt file.</li>
+          <li>Find out more about Valve's product lineup.</li>
+          <li>Quit playing Half-Life.</li>
+        </ul>
+      </nav>
+      <nav id="new-gamemenu" class="menu-nav second-menu-nav configuration hidden">
+        <ul class="main-menu">
+          <li data-item="controls" class="menu-item second-menu-item">
+            <span class="underline">E</span>asy
+          </li>
+          <li data-item="audio" class="menu-item second-menu-item">
+            <span class="underline">M</span>edium
+          </li>
+          <li data-item="video" class="menu-item second-menu-item">
+            <span class="underline">H</span>ard
+          </li>
+        </ul>
+      </nav>
+      <nav id="custom-gamemenu" class="menu-nav second-menu-nav configuration hidden">
+        <ul class="main-menu">
+          <li data-item="activate" class="menu-item second-menu-item">
+            <span class="underline">A</span>ctivate
+          </li>
+          <li data-item="install" class="menu-item inactive second-menu-item">
+            <span class="underline">I</span>nstall
+          </li>
+          <li data-item="visit-web-site" class="menu-item second-menu-item">
+            <span class="underline">V</span>isit web site
+          </li>
+          <li data-item="refresh" class="menu-item second-menu-item">
+            <span class="underline">R</span>efresh list
+          </li>
+          <li data-item="video" class="menu-item second-menu-item">
+            &nbsp;
+          </li>
+          <li data-item="deactivate" class="menu-item inactive second-menu-item">
+            D<span class="underline">e</span>activate
+          </li>
+          <li data-item="done" class="menu-item second-menu-item">
+            <span class="underline">D</span>one
+          </li>
+        </ul>
+        <ul class="description-menu">
+          <div class="classic-box wider margintop">
+          <div class="inner-box"></div>
+          </div>
+        </ul>
+      </nav>
+      <nav id="configurationmenu" class="menu-nav second-menu-nav configuration hidden">
+        <ul class="main-menu">
+          <li data-item="controls" class="menu-item second-menu-item">
+            <span class="underline">C</span>ontrols
+          </li>
+          <li data-item="audio" class="menu-item second-menu-item">
+            <span class="underline">A</span>udio
+          </li>
+          <li data-item="video" class="menu-item second-menu-item">
+            <span class="underline">V</span>ideo
+          </li>
+          <li data-item="contentcontrol" class="menu-item second-menu-item">
+            C<span class="underline">o</span>ntent control
+          </li>
+          <li data-item="update" class="menu-item second-menu-item">
+            <span class="underline">U</span>pdate
+          </li>
+          <li data-item="done" class="menu-item second-menu-item">
+            <span class="underline">D</span>one
+          </li>
+        </ul>
+        <ul class="description-menu">
+          <li>Change keyboard, mouse, and joystick settings.</li>
+          <li>Change sound volume and quality.</li>
+          <li>Change screen size, video mode, gamma, and glare reduction.</li>
+          <li>Disable visuals inappropriate for younger players and multiplayer.</li>
+          <li>Download the latest version of Half-Life.</li>
+          <li>Go back to the Main Menu.</li>
+        </ul>
+      </nav>
+      <nav id="readmemenu" class="menu-nav second-menu-nav readme hidden">
+        <ul class="main-menu">
+          <li data-item="done" class="menu-item second-menu-item">
+            <span class="underline">D</span>one
+          </li>
+        </ul>
+        <ul class="description-menu">
+          <div class="classic-box margintop">
+          <div class="inner-box"></div>
+          </div>
+        </ul>
+      </nav>
+      <div class="version">v45/1.1.0.8</div>
+    </div>
+    <script src="./scripts.js" charset="utf-8"></script>
+  </body>
+</html>

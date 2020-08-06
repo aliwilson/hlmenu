@@ -1,0 +1,418 @@
+body {
+  background-color: #ccc;
+  font-family: Verdana;
+  color: #757273;
+  margin: 0;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: none;
+  overflow: scroll;
+}
+
+.wrapper {
+  position: relative;
+  width: 960px;
+  height: 720px;
+  background-color: #050505;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url("./hlbg.png");
+  padding: 0px 0px 25px 0px;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: scroll;
+  margin: 0 auto;
+}
+
+.logo {
+  position: absolute;
+}
+.logo.solid {
+  width: 650px;
+  top: 124px;
+  left: 0px;
+  filter: blur(0.5px);
+}
+.logo.blur {
+  width: 1500px;
+  top: 124px;
+  left: 0px;
+  filter: blur(12px);
+  opacity: 0.6;
+}
+
+.marquee-logo {
+  user-select: none;
+  pointer-events: none;
+}
+.marquee-logo .solid {
+  animation: hlmove linear 4.2s, hlpulse linear 4.2s;
+  animation-iteration-count: infinite;
+}
+.marquee-logo .blur {
+  animation: hlmovescaled 4.2s linear, hlpulsescaled 4.2s linear;
+  animation-iteration-count: infinite;
+}
+
+.menu-nav {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 263px;
+}
+.menu-nav ul {
+  list-style: none;
+  font-size: 22.5px;
+  margin: 0px;
+  padding: 0px;
+  line-height: 48px;
+  user-select: none;
+}
+.menu-nav .main-menu {
+  flex-basis: 177px;
+  width: 177px;
+  float: left;
+  color: #ecb763;
+  transition: all 0s;
+}
+.menu-nav .main-menu li {
+  transition: color 0.48s linear, text-shadow 0.48s linear, filter 0.48s linear;
+  filter: blur(0.4px);
+}
+.menu-nav .main-menu li .underline {
+  text-decoration: underline;
+}
+.menu-nav .main-menu li:hover {
+  transition: all 0s;
+  cursor: pointer;
+  color: #faf529;
+  -webkit-text-stroke: 1px #faf529;
+  text-shadow: 0px 0px 3px #f7f63f, 0px 0px 5px #8a5c01, 0px 0px 10px #ff8100, 0px 0px 8px #ff8100;
+  filter: blur(0.5px);
+}
+.menu-nav .main-menu li:active {
+  color: #000;
+  -webkit-text-stroke: 1.5px #000;
+}
+.menu-nav .main-menu li.inactive {
+  color: #514729;
+  cursor: default;
+}
+.menu-nav .main-menu li.inactive:hover {
+  color: #514729;
+  -webkit-text-stroke: 0px;
+  text-shadow: 0px 0px;
+}
+.menu-nav .description-menu {
+  font-size: 14.6px;
+  margin-left: 66px;
+  letter-spacing: 0px;
+  filter: blur(0.3px);
+  width: 540px;
+  float: left;
+  text-shadow: 0px 0px 1px rgba(255, 0, 0, 0);
+}
+.menu-nav .description-menu .classic-box {
+  width: 500px;
+  height: 380px;
+  border: 4px solid #818382;
+  position: relative;
+}
+.menu-nav .description-menu .classic-box .inner-box {
+  position: absolute;
+  background-color: #fff;
+  left: 1%;
+  width: 98%;
+  height: 100%;
+}
+.menu-nav .description-menu .classic-box.margintop {
+  margin-top: 18px;
+}
+.menu-nav .description-menu .classic-box.wider {
+  width: 550px;
+}
+.menu-nav.homepage {
+  left: 111px;
+}
+.menu-nav:not(.homepage) {
+  left: 80px;
+  top: 204px;
+}
+
+.buttons {
+  width: 60px;
+  height: 30px;
+  top: 15px;
+  right: 15px;
+  position: absolute;
+  background-color: #64605f;
+  filter: blur(0.3px);
+}
+.buttons .minimize,
+.buttons .exit {
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  position: absolute;
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.buttons .minimize:hover,
+.buttons .exit:hover {
+  background-color: #302e2d;
+}
+.buttons .minimize {
+  left: 5px;
+  top: 5px;
+  background-image: url("./line.svg");
+  background-position: 3px 13px;
+}
+.buttons .exit {
+  right: 5px;
+  top: 5px;
+  background-image: url("./cross.svg");
+}
+
+.version {
+  position: absolute;
+  bottom: 13px;
+  right: 33px;
+  font-size: 13.3px;
+  filter: blur(0.4px);
+  color: #5d4b3b;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sub-heading {
+  position: absolute;
+  top: 90px;
+  left: 78px;
+  font-size: 68px;
+  transition: all 0s;
+  user-select: none;
+  width: 100%;
+  display: block;
+  text-transform: capitalize;
+}
+.sub-heading .innertext, .sub-heading .blurtext {
+  position: absolute;
+  left: 0px;
+}
+.sub-heading .innertext {
+  color: transparent;
+  z-index: 1;
+  text-shadow: 0px 0px 16px #fedd20, 0px 0px 30px #4c4c4c;
+  filter: blur(5px) contrast(5);
+  opacity: 0.8;
+}
+.sub-heading .blurtext {
+  color: transparent;
+  text-shadow: 0px 0px 10px #fc9e0e, 0px 0px 10px #d67528, 0px 0px 20px #d67528, 0px 0px 20px #d67528, 0px 0px 25px #712d0e, 0px 0px 25px #712d0e;
+  filter: contrast(2);
+  filter: blur(3px) contrast(2);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes hlmove {
+  0% {
+    margin-left: 100px;
+  }
+  10.7% {
+    margin-left: 175px;
+  }
+  12.1% {
+    margin-left: 175px;
+  }
+  15% {
+    margin-left: 145px;
+  }
+  15.7% {
+    margin-left: 145px;
+  }
+  18.5% {
+    margin-left: 118px;
+  }
+  45% {
+    margin-left: 180px;
+  }
+  45.7% {
+    margin-left: 180px;
+  }
+  55% {
+    margin-left: 150px;
+  }
+  56.4% {
+    margin-left: 150px;
+  }
+  64.2% {
+    margin-left: 163px;
+  }
+  100% {
+    margin-left: 100px;
+  }
+}
+@keyframes hlpulse {
+  0% {
+    filter: drop-shadow(0px 0px) blur(0.5px);
+  }
+  30% {
+    filter: drop-shadow(0px 0px) blur(0.5px);
+  }
+  30.7% {
+    filter: drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0px white) drop-shadow(0px 0px 0px white) blur(0.5px);
+  }
+  31.4% {
+    filter: drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0px white) drop-shadow(0px 0px 0px white) blur(0.5px);
+  }
+  32.14% {
+    filter: drop-shadow(0px 0px) blur(0.5px);
+  }
+  73.5% {
+    filter: drop-shadow(0px 0px) blur(0.5px);
+  }
+  74.2% {
+    filter: drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0px white) drop-shadow(0px 0px 0px white) blur(0.5px);
+  }
+  75% {
+    filter: drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0px white) drop-shadow(0px 0px 0px white) blur(0.5px);
+  }
+  75.7% {
+    filter: drop-shadow(0px 0px) blur(0.5px);
+  }
+  85.7% {
+    filter: drop-shadow(0px 0px) blur(0.5px);
+  }
+  86.4% {
+    filter: drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0px white) drop-shadow(0px 0px 0px white) blur(0.5px);
+  }
+  87.1% {
+    filter: drop-shadow(0px 0px) blur(0.5px);
+  }
+  96.4% {
+    filter: drop-shadow(0px 0px) blur(0.5px);
+  }
+  97.1% {
+    filter: drop-shadow(0px 0px 5px white) drop-shadow(0px 0px 0px white) drop-shadow(0px 0px 0px white) blur(0.5px);
+  }
+  97.8% {
+    filter: drop-shadow(0px 0px) blur(0.5px);
+  }
+  100% {
+    filter: drop-shadow(0px 0px) blur(0.5px);
+  }
+}
+@keyframes hlpulsescaled {
+  0% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  12.14% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  12.85% {
+    filter: drop-shadow(0px 0px 10px white) drop-shadow(0px 0px 10px white) blur(12px);
+  }
+  13.5% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  14.2% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  15% {
+    filter: drop-shadow(0px 0px 10px white) drop-shadow(0px 0px 10px white) blur(12px);
+  }
+  15.7% {
+    filter: drop-shadow(0px 0px 10px white) drop-shadow(0px 0px 10px white) blur(12px);
+  }
+  16.4% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  30% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  30.7% {
+    filter: drop-shadow(0px 0px 10px white) drop-shadow(0px 0px 10px white) blur(12px);
+  }
+  31.4% {
+    filter: drop-shadow(0px 0px 10px white) drop-shadow(0px 0px 10px white) blur(12px);
+  }
+  32.14% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  75% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  75.7% {
+    filter: drop-shadow(0px 0px 10px white) drop-shadow(0px 0px 10px white) blur(12px);
+  }
+  76.4% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  85.7% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  86.4% {
+    filter: drop-shadow(0px 0px 10px white) drop-shadow(0px 0px 10px white) blur(12px);
+  }
+  87.1% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  96.4% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  97.1% {
+    filter: drop-shadow(0px 0px 10px white) drop-shadow(0px 0px 10px white) blur(12px);
+  }
+  97.8% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+  100% {
+    filter: drop-shadow(0px 0px) blur(12px);
+  }
+}
+@keyframes hlmovescaled {
+  0% {
+    margin-left: -350px;
+  }
+  10.7% {
+    margin-left: -200px;
+  }
+  12.1% {
+    margin-left: -200px;
+  }
+  15% {
+    margin-left: -280px;
+  }
+  15.7% {
+    margin-left: -280px;
+  }
+  18.5% {
+    margin-left: -360px;
+  }
+  45% {
+    margin-left: -173px;
+  }
+  45.7% {
+    margin-left: -173px;
+  }
+  55% {
+    margin-left: -200px;
+  }
+  56.4% {
+    margin-left: -200px;
+  }
+  64.2% {
+    margin-left: -159px;
+  }
+  100% {
+    margin-left: -350px;
+  }
+}
+
+/*# sourceMappingURL=won.css.map */
